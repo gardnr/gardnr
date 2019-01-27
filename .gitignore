@@ -1,0 +1,38 @@
+# temp files
+*~
+*.swp
+*.swo
+*.stackdump
+.cache/
+
+# databases
+*.db
+
+# logs
+nohup.out
+*.log
+
+# python
+*.pyc
+dist/
+build/
+__pycache__/
+
+# mypy
+.mypy_cache
+
+# coverage
+.coverage
+
+# docs
+docsbuild
+
+# vagrant
+.vagrant/
+
+# project
+/docs/*.html
+*.egg-info
+uploaded
+settings_local.py
+cov_html

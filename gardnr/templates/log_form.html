@@ -1,0 +1,79 @@
+{% import "forms.html" as forms %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Manual Log Entry System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+    <style type="text/css">
+      body {
+        text-transform: uppercase;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      .form-metrics {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        border: 1px solid #e5e5e5;
+      }
+      .form-metrics .form-metrics-heading,
+      .form-metrics .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-metrics input[type="text"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+
+      .form-group {
+        padding: 10px 0;
+      }
+
+    </style>
+    <link href="{{ url_for('static', filename='bootstrap-responsive.css') }}" rel="stylesheet">
+  </head>
+
+  <body data-gr-c-s-loaded="true" style="">
+
+    <div class="container">
+
+      <form class="form-metrics" method="POST" enctype="multipart/form-data">
+        <h2 class="form-metrics-heading">LOG ENTRY SYSTEM</h2>
+        {{ form.csrf_token }}
+        {{ forms.render(form) }}
+        <button type="submit" class="btn btn-large btn-primary">
+          SUBMIT
+        </button>
+
+      </form>
+
+    </div> <!-- /container -->
+   
+    <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-transition.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-alert.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-modal.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-dropdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-scrollspy.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-tab.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-tooltip.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-popover.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-button.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-collapse.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-typeahead.js') }}"></script>
+  </body>
+</html>
+{% endblock %}
