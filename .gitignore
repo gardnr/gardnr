@@ -25,7 +25,7 @@ __pycache__/
 .coverage
 
 # docs
-docsbuild
+_build
 
 # vagrant
 .vagrant/
