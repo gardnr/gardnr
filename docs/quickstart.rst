@@ -1,9 +1,21 @@
-Hello World
+Quickstart
 ===========
 
 Here are instructions for creating the simplest drivers. Familiarize yourself with GARDNR definitions before going through this tutorial. See :doc:`definitions`.
 
-The basic features of GARDNR are logging metrics to the database, exporting metric logs, and writing to the log file. The following source code contains code for a sensor driver (read) and an exporter driver (write). We will start with the simplest driver possible:
+The basic features of GARDNR are logging metrics to the database and exporting metric logs. To start logging a metric, you first must add the metric to the database, like so:
+
+.. code-block:: console
+
+   $ gardnr add metric air notes hello-world
+
+Next, a sensor driver can be added which can create logs for the metric `hello-world`. The sensor driver code must be implemented before it can be added to the database. GARDNR can generate empty templates of driver classes to be able to write them faster.
+
+.. code-block:: console
+
+   $ gardnr new sensor hello_world_sensor.py
+
+code for a sensor driver (read) and an exporter driver (write). We will start with the simplest driver possible:
 
 .. literalinclude:: hello_world.py
 
