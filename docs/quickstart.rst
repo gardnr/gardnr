@@ -30,7 +30,7 @@ There should now be a file called `hello_world_sensor.py` in your current direct
 At the end of the file, remove the last two lines and insert:
 
 .. code-block:: python
-   
+
    metrics.create_metric_log('hello-world', 'Hello, World!')
 
 Be sure to indent the line above by eight spaces so it is properly nested under the `read` method. Your `hello_world_sensor.py` file should now look like:
@@ -40,16 +40,19 @@ Be sure to indent the line above by eight spaces so it is properly nested under 
 Next, the sensor driver module must be added to GARDNR's system. To do this, run the following command:
 
 .. code-block:: console
+
    $ gardnr add driver hello-world hello_world_sensor:Sensor
 
 The sensor driver module you just added to GARDNR can now be executed using the following command:
 
 .. code-block:: console
+
    $ gardnr read
 
 What running the command above does is create a log for our `hello-world` metric. Now we can add an exporter driver to GARDNR. Exporters allow logs to be sent to external locations.. In this case, the log will simply be printed to the console for demostration purposes. First, start with an empty exporter template:
 
 .. code-block:: console
+
    $ gardnr new exporter hello_world_exporter.py
 
 Next, open `hello_world_exporter.py` in your preferred code editor, it should contain:
@@ -59,7 +62,7 @@ Next, open `hello_world_exporter.py` in your preferred code editor, it should co
 At the end of the file, remove the last two lines and insert:
 
 .. code-block:: python
-   
+
    print(log.value)
 
 Be sure to indent the line above by 12 spaces so it is properly nested under the `for` loop inside the `export` method. Your `hello_world_sensor.py` file should now look like:
@@ -69,6 +72,7 @@ Be sure to indent the line above by 12 spaces so it is properly nested under the
 The exporter driver module you just added to GARDNR can now be executed using the following command:
 
 .. code-block:: console
+
    $ gardnr write
 
 You should now see `Hello, World!` displayed in the console. Note, that if you the above command again, nothing would be displayed. This is because metric logs are only exported once per exporter in the system.
