@@ -1,9 +1,9 @@
-#Installation#
+# Installation
 
 `$ pip install gardnr`
 
 
-#Usage#
+# Usage
 
 - CLI `$ gardnr`
 - Automata (runs scheduler) `$ gardnr-automata`
