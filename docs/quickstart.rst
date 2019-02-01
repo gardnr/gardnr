@@ -3,9 +3,9 @@ Quickstart
 
 GARDNR requires Python 3.5 or higher.
 
-Be sure to famliarize yourself with Object-oriented programming and [Python classes](https://docs.python.org/3.5/tutorial/classes.html) before using GARDNR.
+Be sure to famliarize yourself with Object-oriented programming and `Python classes <https://docs.python.org/3.5/tutorial/classes.html>`_ before using GARDNR.
 
-First, install GARDNR using [pip](https://pip.pypa.io/en/stable/):
+First, install GARDNR using `pip <https://pip.pypa.io/en/stable/>`_:
 
 .. code-block:: console
 
