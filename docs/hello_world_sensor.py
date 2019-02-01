@@ -1,26 +1,33 @@
-from gardnr import constants, drivers, logger, metrics
+from gardnr import drivers, logger, metrics
 
 
-class HelloWorldSensor(drivers.Sensor):
+class Sensor(drivers.Sensor):
+    """
+    Add code to interface with physical or virtual sensors here.
+    """
+
+    def setup(self):
+        """
+        Add configuration here
+        """
+
+        # remove the next line and add code
+        pass
 
     def read(self):
-        metrics.create_log('hello-world', '{first} {second}'.format(
-            first=self.first,
-            second=self.second
-        ))
+        """
+        Example log:
 
-        logger.info('Writing {first} {second} to database'.format(
-            first=self.first,
-            second=self.second
-        ))
+        metrics.create_metric_log('my-metric', 42)
 
 
-class HelloWorldExporter(drivers.Exporter):
+        Example image log:
 
-    whitelist = [constants.Metrics.TEMPERATURE]
+        metrics.create_image_log(
+            self.metric_name,
+            image_bytes,
+            extension=self.image_file_extension
+        )
+        """
 
-    def export(self, logs):
-        for log in logs:
-            print(log.value)
-
-        logger.info('Printing logs to console')
+        metrics.create_metric_log('hello-world', 'Hello, World!')

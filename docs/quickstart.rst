@@ -1,7 +1,15 @@
 Quickstart
 ===========
 
-Here are instructions for creating the simplest drivers. Familiarize yourself with GARDNR definitions before going through this tutorial. See :doc:`definitions`.
+GARDNR requires Python 3.5 or higher.
+
+Be sure to famliarize yourself with Object-oriented programming and [Python classes](https://docs.python.org/3.5/tutorial/classes.html) before using GARDNR.
+
+First, install GARDNR using [pip](https://pip.pypa.io/en/stable/):
+
+.. code-block:: console
+
+   $ pip install gardnr
 
 The basic features of GARDNR are logging metrics to the database and exporting metric logs. To start logging a metric, you first must add the metric to the database, like so:
 
@@ -15,42 +23,52 @@ Next, a sensor driver can be added which can create logs for the metric `hello-w
 
    $ gardnr new sensor hello_world_sensor.py
 
-code for a sensor driver (read) and an exporter driver (write). We will start with the simplest driver possible:
+There should now be a file called `hello_world_sensor.py` in your current directory. Open this file in your preferred code editor, it should contain:
 
-.. literalinclude:: hello_world.py
+.. literalinclude:: sensor_driver_template.py
 
-Next, add the metric and drivers to GARDNR. Run the following commands in the repository root directory:
+At the end of the file, remove the last two lines and insert:
 
-.. code-block:: console
+.. code-block:: python
+   
+   metrics.create_metric_log('hello-world', 'Hello, World!')
 
-   $ python3 -m gardnr.cli add metric hello-world air notes
-   $ python3 -m gardnr.cli add driver hw-sensor samples.hello_world:HelloWorldSensor -c first=Hello second='World!'
-   $ python3 -m gardnr.cli add driver hw-exporter samples.hello_world:HelloWorldExporter
+Be sure to indent the line above by eight spaces so it is properly nested under the `read` method. Your `hello_world_sensor.py` file should now look like:
 
-You can then run the driver with the following command:
+.. literalinclude:: hello_world_sensor.py
 
-.. code-block:: console
-
-   $ python3 -m gardnr.cli read
-
-This will write a value of `Hello World!` for metric `hello-world` into `gardnr.db` and write a log message to `gardnr.log`. You can verify the metric value was successfully writen to `gardnr.db` using the `SQLite CLI`_. You can verify the log message was written `gardnr.log` by running :code:`$ tail -n 10 gardnr.log`
-
-.. _SQLite CLI: https://www.sqlite.org/cli.html
-
-To run the test exporter, run the following command:
+Next, the sensor driver module must be added to GARDNR's system. To do this, run the following command:
 
 .. code-block:: console
+   $ gardnr add driver hello-world hello_world_sensor:Sensor
 
-   $ python3 -m gardnr.cli write
-
-All this test exporter does is print the metric value to the console and write to `gardnr.log`, so you should see `Hello World!`.
-
-Now lets add a manually tracked metric:
+The sensor driver module you just added to GARDNR can now be executed using the following command:
 
 .. code-block:: console
+   $ gardnr read
 
-   $ python3 -m gardnr.cli manual on hello-world
+What running the command above does is create a log for our `hello-world` metric. Now we can add an exporter driver to GARDNR. Exporters allow logs to be sent to external locations.. In this case, the log will simply be printed to the console for demostration purposes. First, start with an empty exporter template:
 
-Because the metric `hello-world` has been set to manual, it will appear in the Log Entry System web client. Refer to the README for instructions on using L.E.S.
+.. code-block:: console
+   $ gardnr new exporter hello_world_exporter.py
 
-Congratulations! You are now ready to create your own drivers for fulfilling your monitoring and automation needs. Use the driver code in the `samples` directory for examples of production drivers.
+Next, open `hello_world_exporter.py` in your preferred code editor, it should contain:
+
+.. literalinclude:: exporter_driver_template.py
+
+At the end of the file, remove the last two lines and insert:
+
+.. code-block:: python
+   
+   print(log.value)
+
+Be sure to indent the line above by 12 spaces so it is properly nested under the `for` loop inside the `export` method. Your `hello_world_sensor.py` file should now look like:
+
+.. literalinclude:: hello_world_exporter.py
+
+The exporter driver module you just added to GARDNR can now be executed using the following command:
+
+.. code-block:: console
+   $ gardnr write
+
+You should now see `Hello, World!` displayed in the console. Note, that if you the above command again, nothing would be displayed. This is because metric logs are only exported once per exporter in the system.
