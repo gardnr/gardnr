@@ -41,7 +41,7 @@ Next, the sensor driver module must be added to GARDNR's system. To do this, run
 
 .. code-block:: console
 
-   $ gardnr add driver hello-world hello_world_sensor:Sensor
+   $ gardnr add driver hello-world-sensor hello_world_sensor:Sensor
 
 The sensor driver module you just added to GARDNR can now be executed using the following command:
 
@@ -68,6 +68,12 @@ At the end of the file, remove the last two lines and insert:
 Be sure to indent the line above by 12 spaces so it is properly nested under the `for` loop inside the `export` method. Your `hello_world_sensor.py` file should now look like:
 
 .. literalinclude:: hello_world_exporter.py
+
+Next, the exporter driver module must be added to GARDNR's system. To do this, run the following command:
+
+.. code-block:: console
+
+   $ gardnr add driver hello-world-exporter hello_world_exporter:Exporter
 
 The exporter driver module you just added to GARDNR can now be executed using the following command:
 
