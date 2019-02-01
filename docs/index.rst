@@ -10,7 +10,7 @@ Welcome to GARDNR's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   hello-world
+   quickstart
    definitions
    drivers
 

@@ -3,8 +3,6 @@
 `$ pip install gardnr`
 
 
-# Usage
+# Documentation
 
-- CLI `$ gardnr`
-- Automata (runs scheduler) `$ gardnr-automata`
-- Web Server `$ gardnr-server`
+[https://gardnr.readthedocs.io](https://gardnr.readthedocs.io)
