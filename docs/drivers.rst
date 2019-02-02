@@ -7,7 +7,7 @@ Drivers
 Management
 ----------
 
-- See :doc:`hello-world` for a tutorial on adding drivers
+- See :doc:`intro/tutorial01` for how to add drivers
 - To remove a driver `$ python3 -m gardnr.cli remove driver my-driver`
 - To disable a driver `$ python3 -m gardnr.cli disable driver my-driver`. Disabling a driver will prevent it from executing during a read.
 

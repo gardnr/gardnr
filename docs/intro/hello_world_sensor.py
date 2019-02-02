@@ -30,4 +30,4 @@ class Sensor(drivers.Sensor):
         )
         """
 
-        metrics.create_metric_log('hello-world', 'Hello, World!')
+        metrics.create_metric_log('hello-world', 20)

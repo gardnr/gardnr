@@ -1,5 +1,5 @@
-Quickstart
-===========
+Tutorial Part 1
+===============
 
 GARDNR requires Python 3.5 or higher.
 
@@ -15,7 +15,7 @@ The basic features of GARDNR are logging metrics to the database and exporting m
 
 .. code-block:: console
 
-   $ gardnr add metric air notes hello-world
+   $ gardnr add metric air temperature hello-world
 
 Next, a sensor driver can be added which can create logs for the metric `hello-world`. The sensor driver code must be implemented before it can be added to the database. GARDNR can generate empty templates of driver classes to be able to write them faster.
 
@@ -31,7 +31,7 @@ At the end of the file, remove the last two lines and insert:
 
 .. code-block:: python
 
-   metrics.create_metric_log('hello-world', 'Hello, World!')
+   metrics.create_metric_log('hello-world', 20)
 
 Be sure to indent the line above by eight spaces so it is properly nested under the `read` method. Your `hello_world_sensor.py` file should now look like:
 
@@ -81,4 +81,6 @@ The exporter driver module you just added to GARDNR can now be executed using th
 
    $ gardnr write
 
-You should now see `Hello, World!` displayed in the console. Note, that if you the above command again, nothing would be displayed. This is because metric logs are only exported once per exporter in the system.
+You should now see `20` displayed in the console. Note, that if you the above command again, nothing would be displayed. This is because metric logs are only exported once per exporter in the system.
+
+Continue to :doc:`tutorial02`
