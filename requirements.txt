@@ -21,7 +21,6 @@ flake8==3.5.0
 Flask==1.0.2
 flask-command==0.0.3
 Flask-WTF==0.14.2
--e git+git@github.com:njason/gardnr.git@12c4d79b1740b0e605a9046b2120bbd7ee4c82e0#egg=gardnr
 grow-recipe==0.8.0
 gunicorn==19.9.0
 idna==2.6
