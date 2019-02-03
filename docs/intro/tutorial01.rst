@@ -1,6 +1,9 @@
 Tutorial Part 1
 ===============
 
+Logging metric data with Drivers
+---------------------------------
+
 GARDNR requires Python 3.5 or higher.
 
 Be sure to famliarize yourself with Object-oriented programming and `Python classes <https://docs.python.org/3.5/tutorial/classes.html>`_ before using GARDNR.

@@ -1,6 +1,9 @@
 Tutorial Part 2
 ===============
 
+Manual Log Entry
+----------------
+
 In :doc:`tutorial01` you created a driver which wrote logs for an air temperature metric, `hello-world`. For some metrics, you not have the sensor hardware available to read metric data so there will be no driver code to write to log metric data. Or, sensor hardware may fail and your driver code unable to log metric data. In these cases, you will want to manually log your metric data. To set a metric to manual mode, run:
 
 .. code-block:: console
