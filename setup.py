@@ -6,6 +6,7 @@ setup(
     name='gardnr',
     version='0.5.4',
     author='Jason Biegel',
+    url='https://github.com/gardnr/gardnr',
     license='LICENSE',
     description='Monitor and control your grow operation.',
     packages=find_packages(exclude=['docs', 'samples', 'tests']),
