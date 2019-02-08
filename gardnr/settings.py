@@ -1,4 +1,5 @@
 import logging
+import os
 
 from gardnr import constants
 
@@ -6,6 +7,7 @@ from gardnr import constants
 TEST_MODE = False
 
 LOCAL_DB = 'gardnr.db'
+DRIVER_PATH = os.getcwd()
 
 # logging
 LOG_FILE = 'gardnr.log'

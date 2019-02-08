@@ -42,6 +42,8 @@ def main() -> None:
     # wait to see if in test mode to initialize the database
     models.initialize_db()
 
+    reflection.add_driver_path(settings.DRIVER_PATH)
+
     # execute the command
     args.func(args)
 

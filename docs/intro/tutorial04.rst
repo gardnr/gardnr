@@ -1,34 +1,59 @@
 Tutorial Part 4
 ===============
 
-Scheduling
-----------
+Power Drivers
+-------------
 
-Sensor and exporter drivers can be executed manually using the `read` and `write` commands respectively:
-
-.. code-block:: console
-
-   $ gardnr read  # executes sensor drivers
-   $ gardnr write # extutes exporter drivers
-
-This can be tedious and inconvenient to manually run commands in a shell to execute driver code. Schedules can be used to automatically execute drivers. First a schedule must be created. Schedules can be added to GARDNR using `CRON <https://en.wikipedia.org/wiki/Cron>`_ syntax.
+Power Drivers are used to control devices with binary states, either on or off. To create a new power driver from an empty template, run:
 
 .. code-block:: console
 
-   $ gardnr add schedule every-five-minutes \*/5 \* \* \* \*
-   You entered: Every 5 minutes
-   Does this look correct? ([y]/n)
+   $ gardnr new power hello_world_power.py
 
-Note that the `\*` is to escape the astericks so it is not evaluated by the shell as a wildcard. The command above will add a schedule named `every-five-minutes` after you confirm by hitting `y` and then `Enter`. Next, schedule a driver. We will schedule the `hello-world-sensor` we created in :doc:`tutorial01`:
+There should now be a file called `hello_world_power.py` in your current directory. Open this file in your preferred code editor, it should contain:
+
+.. literalinclude:: power_driver_template.py
+
+In the `on` method, remove the last two lines and insert:
+
+.. code-block:: python
+
+   print('Device turning on')
+
+In the `off` method, remove the last line and insert:
+
+.. code-block:: python
+
+   print('Device turning off')
+
+Your `hello_world_power.py` file should now look like:
+
+.. literalinclude:: hello_world_power.py
+
+Next, add the driver to GARDNR by running:
 
 .. code-block:: console
 
-   $ gardnr schedule add hello-world-sensor every-five-minutes
+   $ gardnr add driver hello-world-power power_driver:Power
 
-To execute scheduled drivers, enter the following command which will run indefinitely:
+To run the `on` method, run the following command:
 
 .. code-block:: console
 
-   $ gardnr-automata
+   $ gardnr power on hello-world-power
 
-Continue to :doc:`tutorial04`
+You should now see `Device turning on` displayed in the console. To run the `off` method, run the following command:
+
+.. code-block:: console
+
+   $ gardnr power off hello-world-power
+
+You should now see `Device turning off` displayed in the console.
+
+Like sensor and exporter drivers, power drivers can also be scheduled, which is described in :doc:`tutorial03`. However, adding schedules for power drivers requires specifying the state as well. To add a power driver turning on, to a schedule, run:
+
+.. code-block:: console
+
+   $ gardnr schedule add hello-world-power every-five-minutes on
+
+Continue to :doc:`tutorial05`

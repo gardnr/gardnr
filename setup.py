@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='gardnr',
-    version='0.5.3',
+    version='0.5.4',
     author='Jason Biegel',
     license='LICENSE',
     description='Monitor and control your grow operation.',

@@ -22,6 +22,8 @@ def main() -> None:
 
     models.initialize_db()
 
+    reflection.add_driver_path(settings.DRIVER_PATH)
+
     scheduler = BlockingScheduler()
 
     schedules = models.Schedule.select()\

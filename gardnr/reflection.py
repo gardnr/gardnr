@@ -1,7 +1,13 @@
 import importlib
+import sys
 from typing import List, Optional
 
 from gardnr import constants, drivers, models
+
+
+def add_driver_path(path: str) -> None:
+    """Adds path to PYTHONPATH"""
+    sys.path.append(path)
 
 
 def get_fully_qualname(cls: type) -> str:
