@@ -12,6 +12,8 @@ Bootstrapper for DIY IoT projects with a focus on horticulture.
 
 # Installation
 
+Requires Python 3.5+
+
 `$ pip install gardnr`
 
 # Documentation
