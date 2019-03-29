@@ -1,11 +1,28 @@
-# Installation
+```
+ #####      #     ######   ######   #     #  ######
+#     #    # #    #     #  #     #  ##    #  #     #
+#         #   #   #     #  #     #  # #   #  #     #
+#  ####  #     #  ######   #     #  #  #  #  ######
+#     #  #######  #   #    #     #  #   # #  #   #
+#     #  #     #  #    #   #     #  #    ##  #    #
+ #####   #     #  #     #  ######   #     #  #     #
+```
 
-`$ pip install gardnr`
-
+Bootstrapper for DIY IoT projects with a focus on horticulture.
 
 # Documentation
 
 [https://gardnr.readthedocs.io](https://gardnr.readthedocs.io)
+
+# Drivers
+
+Here are some provided driver modules:
+
+- [Sensor](https://github.com/search?q=org%3Agardnr+topic%3Asensor)
+- [Exporter](https://github.com/search?q=org%3Agardnr+topic%3Aexporter)
+- [Power](https://github.com/search?q=org%3Agardnr+topic%3Apower)
+
+# Development
 
 ## Building Documentation
 
