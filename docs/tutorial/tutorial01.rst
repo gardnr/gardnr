@@ -1,8 +1,5 @@
-Tutorial Part 1
-===============
-
-Logging metric data with Drivers
----------------------------------
+Part 1: Logging metric data with Drivers
+========================================
 
 GARDNR requires Python 3.5 or higher.
 
@@ -84,6 +81,4 @@ The exporter driver module you just added to GARDNR can now be executed using th
 
    $ gardnr write
 
-You should now see `20` displayed in the console. Note, that if you the above command again, nothing would be displayed. This is because metric logs are only exported once per exporter in the system.
-
-Continue to :doc:`tutorial02`
+You should now see `20` displayed in the console. Note, that if you were to run the above command again, nothing would be displayed. This is because metric logs are only exported once per exporter in the system.

@@ -1,8 +1,5 @@
-Tutorial Part 5
-===============
-
-Grows
------
+Part 5: Grows
+=============
 
 Grow models are used to group metric logs into a collection, ideally for the duration of a single crop cycle. Grows consist of a start and end time. To start a grow, run:
 

@@ -1,8 +1,5 @@
-Tutorial Part 4
-===============
-
-Power Drivers
--------------
+Part 4: Power Drivers
+=====================
 
 Power Drivers are used to control devices with binary states, either on or off. To create a new power driver from an empty template, run:
 
@@ -14,13 +11,13 @@ There should now be a file called `hello_world_power.py` in your current directo
 
 .. literalinclude:: power_driver_template.py
 
-In the `on` method, remove the last two lines and insert:
+In the ``on`` method, remove the last two lines and insert:
 
 .. code-block:: python
 
    print('Device turning on')
 
-In the `off` method, remove the last line and insert:
+In the ``off`` method, remove the last line and insert:
 
 .. code-block:: python
 
@@ -36,13 +33,13 @@ Next, add the driver to GARDNR by running:
 
    $ gardnr add driver hello-world-power power_driver:Power
 
-To run the `on` method, run the following command:
+To run the ``on`` method, run the following command:
 
 .. code-block:: console
 
    $ gardnr power on hello-world-power
 
-You should now see `Device turning on` displayed in the console. To run the `off` method, run the following command:
+You should now see `Device turning on` displayed in the console. To run the ``off`` method, run the following command:
 
 .. code-block:: console
 
@@ -50,10 +47,8 @@ You should now see `Device turning on` displayed in the console. To run the `off
 
 You should now see `Device turning off` displayed in the console.
 
-Like sensor and exporter drivers, power drivers can also be scheduled, which is described in :doc:`tutorial03`. However, adding schedules for power drivers requires specifying the state as well. To add a power driver turning on, to a schedule, run:
+Like sensor and exporter drivers, power drivers can also be scheduled, which is described in :doc:`tutorial03`. However, adding schedules for power drivers requires specifying the state as well. To put turning on a power driver on a schedule, run:
 
 .. code-block:: console
 
    $ gardnr schedule add hello-world-power every-five-minutes on
-
-Continue to :doc:`tutorial05`

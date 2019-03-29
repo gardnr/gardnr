@@ -73,7 +73,7 @@ def write(exporters: List[drivers.Exporter]) -> None:
         try:
             exporter.export([log for log in logs])  # type: ignore
         except Exception as e:  # pylint: disable=broad-except
-            logger.exception('Error transmitting')
+            logger.exception('Error exporting')
 
             # If the exporter sets the failed_logs field in the exception
             # use it, otherwise assume all logs failed
@@ -86,7 +86,5 @@ def write(exporters: List[drivers.Exporter]) -> None:
             failed_log_ids = [log.id for log in failed_logs]
 
         for log in logs:
-            if log.id in failed_log_ids:
-                continue
-
-            models.ExportLog.create(metric_log=log, driver=exporter.model)
+            if log.id not in failed_log_ids:
+                models.ExportLog.create(metric_log=log, driver=exporter.model)

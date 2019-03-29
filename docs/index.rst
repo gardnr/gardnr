@@ -1,18 +1,13 @@
-.. GARDNR documentation master file, created by
-   sphinx-quickstart on Fri Jun 15 02:09:33 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+GARDNR
+======
 
-Welcome to GARDNR's documentation!
-==================================
+GARDNR is a bootstrapper for DIY IoT projects with a focus on horticulture. What that means is GARDNR makes it easy to setup customized fully-functional monitoring and automation solutions. All of the mundane features of creating a system come out-of-the-box. This allows you to focus on writing the code that interfaces with hardware.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   intro/index
-   definitions
-   drivers
+   tutorial/index
 
 
 Indices and tables
