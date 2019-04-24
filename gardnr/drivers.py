@@ -19,17 +19,18 @@ class Driver(metaclass=ABCMeta):
         """holds user defined configs for drivers and transmitters"""
         self.model = model
 
-        self.setup()
 
         if self.model.config is not None:
             for key, value in self.model.config.items():
                 if hasattr(self, key):
-                    logger.warning('{name} is overriding attribute {key} for '
-                                   '{qualname}.'.format(
-                                       name=self.model.name,
-                                       key=key,
-                                       qualname=type(self).__qualname__))
+                    logger.info('{name} is overriding attribute {key} for '
+                                '{qualname}.'.format(
+                                    name=self.model.name,
+                                    key=key,
+                                    qualname=type(self).__qualname__))
                 setattr(self, key, value)
+
+        self.setup()
 
     def setup(self) -> None:
         """Do not override __init__, override setup instead."""

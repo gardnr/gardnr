@@ -34,9 +34,8 @@ class MockPower(drivers.Power):
 class MockSensor(drivers.Sensor):
     """A driver for testing, no hardware dependencies."""
 
-    def setup(self):
-        self.sample_temperature = None  # type: int
-        self.temperature_metric = None  # type: str
+    sample_temperature = None  # type: int
+    temperature_metric = None  # type: str
 
     def read(self) -> None:
         metrics.create_metric_log(self.temperature_metric,

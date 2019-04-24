@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='gardnr',
-    version='0.5.7',
+    version='0.5.8',
     author='Jason Biegel',
     url='https://github.com/gardnr/gardnr',
     license='LICENSE',
