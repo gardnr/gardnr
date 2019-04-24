@@ -6,8 +6,8 @@ class Exporter(drivers.Exporter):
     Uncomment these to filter the types of metrics are logged.
     Either whitelist or blacklist must be used, not both.
     """
-    # whitelist = [constants.Metrics.IMAGE]
-    # blacklist = [constants.Metrics.IMAGE]
+    # whitelist = [constants.IMAGE]
+    # blacklist = [constants.IMAGE]
 
     def setup(self):
         """
