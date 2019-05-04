@@ -49,6 +49,30 @@ def test_add_driver_with_config() -> None:
 
 
 @pytest.mark.usefixtures('test_env')
+def test_add_driver_with_multiple_config() -> None:
+
+    utils.create_air_temperature_metric(metric_name='foo')
+
+    driver_name = 'test-driver'
+
+    _, args = cli.create_and_run_parser(['add', 'driver', driver_name,
+                                         'tests.utils:MockSensor',
+                                         '-c', 'sample_temperature=1',
+                                         'temperature_metric=foo'])
+    args.func(args)
+
+    driver_model = models.Driver.get(models.Driver.name == driver_name)
+    driver = reflection.load_driver(driver_model)
+
+    tasks.read([driver])
+
+    log = models.MetricLog.select()[0]
+
+    assert log.value == b'1'
+    assert log.metric.name == 'foo'
+
+
+@pytest.mark.usefixtures('test_env')
 def test_add_schedule() -> None:
 
     schedule_name = 'test-schedule'

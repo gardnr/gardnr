@@ -565,7 +565,7 @@ def power_off(args: argparse.Namespace) -> None:
 
 class StoreDictKeyPair(argparse.Action):
     """
-    Running: `./cli.py --key_pairs 1=2 foo=bar`
+    Running: `./cli.py -c 1=2 foo=bar`
     Outputs: `argparse.Namespace(key_pairs={'1': '2', 'foo': 'bar'})`
     Credit: https://stackoverflow.com/a/42355279/1981635
     """
