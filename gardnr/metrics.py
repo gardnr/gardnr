@@ -37,11 +37,12 @@ def create_file_log(metric_name: str,
 
     full_path = os.path.join(settings.UPLOAD_PATH, uploaded_file_name)
 
-    open(full_path, 'wb').write(blob)
+    with open(full_path, 'wb') as file:
+        file.write(blob)
 
     return models.MetricLog.create(id=uuid,
                                    metric=metric,
-                                   value=full_path)
+                                   value=uploaded_file_name)
 
 
 class MetricBase:
