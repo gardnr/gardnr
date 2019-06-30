@@ -3,7 +3,7 @@ from grow_recipe.constants import *  # noqa F403
 NOTES = 'notes'
 IMAGE = 'image'
 POWER = 'power'
-GARDNR_METRICS = {'notes', 'image', 'power'}
+GARDNR_METRICS = {NOTES, IMAGE, POWER}
 metrics = metrics.union(GARDNR_METRICS)
 
 MANUAL_OVERRIDE_CONFIG = 'manual'
