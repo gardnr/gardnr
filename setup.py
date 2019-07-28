@@ -26,7 +26,8 @@ setup(
         'console_scripts': [
             'gardnr=gardnr.cli:main',
             'gardnr-automata=gardnr.automata:main',
-            'gardnr-server=gardnr.server:main'
+            'gardnr-server=gardnr.server:main',
+            'gardnr-mqtt=gardnr.mqtt:main'
         ]
     }
 )
