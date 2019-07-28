@@ -13,3 +13,4 @@ Here is the best place to start learning how to get GARDNR up and running. The t
    tutorial04
    tutorial05
    tutorial06
+   tutorial07
