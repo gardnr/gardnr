@@ -1,21 +1,31 @@
 import os
-from typing import Any
+from datetime import datetime
+from typing import Any, Optional
 from uuid import uuid4
 
 from gardnr import constants, models, settings
 
 
-def create_metric_log(metric_name: str, value: Any) -> models.MetricLog:
+def create_metric_log(metric_name: str,
+                      value: Any,
+                      timestamp: Optional[datetime] = None) -> models.MetricLog:
     """sets up common metric log fields"""
 
     metric = models.Metric.get(models.Metric.name == metric_name)
+
+    if timestamp:
+        return models.MetricLog.create(id=uuid4(),
+                                       metric=metric,
+                                       value=value,
+                                       timestamp=timestamp)
 
     return models.MetricLog.create(id=uuid4(), metric=metric, value=value)
 
 
 def create_file_log(metric_name: str,
                     blob: bytes,
-                    extension: str) -> models.MetricLog:
+                    extension: str,
+                    timestamp: Optional[datetime] = None) -> models.MetricLog:
     """
     Creates a special metric log for blob (bytes) type
     metrics, i.e. images and videos. The value of the metric
@@ -42,7 +52,8 @@ def create_file_log(metric_name: str,
 
     return models.MetricLog.create(id=uuid,
                                    metric=metric,
-                                   value=uploaded_file_name)
+                                   value=uploaded_file_name,
+                                   timestamp=timestamp)
 
 
 class MetricBase:
