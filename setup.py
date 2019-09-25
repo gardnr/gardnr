@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='gardnr',
-    version='0.5.10',
+    version='0.5.11',
     author='Jason Biegel',
     url='https://github.com/gardnr/gardnr',
     license='LICENSE',
@@ -18,7 +18,7 @@ setup(
         'flask-command==0.0.3',
         'Flask-WTF==0.14.2',
         'gunicorn==19.9.0',
-        'grow-recipe==0.10.1',
+        'grow-recipe==0.10.2',
         'peewee==3.7.1',
         'pytz'
     ],
