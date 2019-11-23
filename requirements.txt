@@ -77,7 +77,7 @@ typed-ast==1.1.0
 tzlocal==1.5.1
 urllib3==1.23
 wcwidth==0.1.7
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 wrapt==1.10.11
 WTForms==2.1
 yarg==0.1.9
