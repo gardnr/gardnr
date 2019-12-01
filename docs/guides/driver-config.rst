@@ -15,7 +15,8 @@ Now, to set the the ``message`` attribute, we pass in a value while adding the d
 
    $ gardnr add driver sensor attribute_sensor:Sensor -c message="hello world"
 
-### Multiple configuration attributes
+Multiple configuration attributes
+---------------------------------
 
 Multiple configuration attributes can be passed in while adding a driver to GARDNR
 
