@@ -8,6 +8,7 @@ GARDNR is a bootstrapper for DIY IoT projects with a focus on horticulture. What
    :caption: Contents:
 
    tutorial/index
+   guides/index
 
 
 Indices and tables
