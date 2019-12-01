@@ -20,6 +20,6 @@ Multiple configuration attributes
 
 Multiple configuration attributes can be passed in while adding a driver to GARDNR
 
-.. clode-block:: console
+.. code-block:: console
 
    $ gardnr add driver sensor attribute_sensor:Sensor -c attr1=55 attr2="foo"
